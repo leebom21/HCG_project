@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <script
+      src="https://kit.fontawesome.com/682f317513.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="/js/common.js"></script>
+  </head>
+  <!--툴팁 아이콘은 첨부파일에 없어서 어썸폰트로 대체해서 작업처리-->
+  <body>
+    <div class="align_wrap">
+      <div class="button_box">
+        <h2 class="kit_tit">Button Status</h2>
+        <div class="button_wrap_box">
+          <div>
+            <p class="label">Default</p>
+            <button>수정</button>
+          </div>
+          <div>
+            <p class="label">Hover</p>
+            <button class="hover">수정</button>
+          </div>
+          <div>
+            <p class="label">Disabled</p>
+            <button disabled>수정</button>
+          </div>
+          <div>
+            <p class="label">Delete</p>
+            <button class="delete">삭제</button>
+          </div>
+          <div>
+            <p class="label">comfirm</p>
+            <button class="confirm">확인</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="toggle_button_box">
+        <h2 class="kit_tit">Toggle Status</h2>
+        <div>
+          <p class="label">ON</p>
+          <div class="radio_togle active">
+            <input type="checkbox" class="tg nohidden" checked id="toggle1" />
+            <label class="tg_btn tg_check" for="toggle1"></label>
+          </div>
+        </div>
+
+        <div>
+          <p class="label">OFF</p>
+          <div class="radio_togle active">
+            <input type="checkbox" class="tg nohidden" id="toggle2" />
+            <label class="tg_btn tg_check" for="toggle2"></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab_button_box">
+        <h2 class="kit_tit">Tab Status</h2>
+        <div class="middle_tab_box">
+          <ul class="tab_list_box">
+            <li class="tab_list_li">
+              <p class="label">Default</p>
+              <a class="tab_list_btn">
+                label
+                <span class="active_line"></span>
+              </a>
+            </li>
+            <li class="tab_list_li active">
+              <p class="label">Active</p>
+              <a class="tab_list_btn">
+                label
+                <span class="active_line"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="text_wrap">
+        <h2 class="kit_tit">Text Size</h2>
+
+        <div>
+          <p class="descripton_bold_medium">Pretendard bold 18px</p>
+          <p class="descripton_bold_small">Pretendard bold 14px</p>
+
+          <p class="descripton_semibold_large">Pretendard semibold 24px</p>
+          <p class="descripton_semibold_medium">Pretendard semibold 18px</p>
+          <p class="descripton_semibold_regular">Pretendard semibold 16px</p>
+          <p class="descripton_semibold_small">Pretendard semibold 14px</p>
+
+          <p class="descripton_medium_medium">Pretendard medium 18px</p>
+          <p class="descripton_medium_small">Pretendard medium 14px</p>
+
+          <p class="descripton_regular_regular">Pretendard regular 14px</p>
+          <p class="descripton_regular_xsmall">Pretendard regular 12px</p>
+        </div>
+
+        <div></div>
+      </div>
+
+      <div class="dropdown_box">
+        <h2 class="kit_tit">Status</h2>
+        <div class="white_box">
+          <div class="title">
+            <p class="descripton_bold_medium">
+              기본 정보
+              <span>
+                <i class="fa-solid fa-circle-info" style="color: #bfbfbf"></i>
+              </span>
+            </p>
+            <button class="dropdown_btn" id="drop">
+              <img
+                src="/images/Keyboard_arrow_down.png"
+                alt="펼치기버튼"
+                width="26"
+                height="26"
+              />
+            </button>
+          </div>
+          <div class="hide_area"></div>
+        </div>
+      </div>
+    </div>
+    <div class="align_wrap mrt_100">
+      <div class="tooltip_box">
+        <h2 class="kit_tit">Tooltip</h2>
+        <div>
+          <div class="relative">
+            <p class="descripton_bold_medium">
+              알림 수신 동의
+              <span class="tip_icon">
+                <i class="fa-solid fa-circle-info" style="color: #bfbfbf"></i>
+              </span>
+            </p>
+            <div class="tooltip">
+              <button class="cancel">
+                <i
+                  class="fa-solid fa-xmark fa-fw fa-lg"
+                  style="color: #9b9b9b"
+                ></i>
+              </button>
+              <p class="descripton_semibold_small">로그인 차단 설정</p>
+              <span class="descripton_regular_regular">descripton..</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert_box">
+        <h2 class="kit_tit">Alert</h2>
+        <div>
+          <p class="descripton_semibold_small">로그인 차단 설정</p>
+          <span class="descripton_regular_regular">descripton..</span>
+          <div class="button_wrap_box text_right">
+            <button>나중에</button>
+            <button class="confirm">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
