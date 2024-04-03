@@ -4,12 +4,571 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>HCG Test</title>
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <script
+      src="https://kit.fontawesome.com/682f317513.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="/js/common.js"></script>
   </head>
   <body>
-    <h1>PC 기준</h1>
-    <p>sdasd</p>
+    <div class="container">
+      <div class="left_wrap">
+        <div class="left_area">
+          <!--menu-->
+          <div class="top_menu">
+            <button>
+              <img
+                src="/images/left_arrow.png"
+                alt="뒤로가기"
+                width="26"
+                height="26"
+              />
+            </button>
+            <p class="descripton_semibold_large">설정</p>
+          </div>
+          <div class="profile_wrap">
+            <div class="image">
+              <!-- <img src="내프로필" alt="" /> -->
+            </div>
+            <p class="name descripton_semibold_large">김혜성</p>
+            <span class="email descripton_medium_medium gray"
+              >comet33@performance.com</span
+            >
+          </div>
+          <div class="menu_list">
+            <ul>
+              <li class="active">
+                <a href="" class="descripton_semibold_medium align"
+                  >마이페이지</a
+                >
+                <ul class="li_item">
+                  <li>
+                    <a class="descripton_medium_medium gray_darken"
+                      >내 근무 관리</a
+                    >
+                  </li>
+                  <li>
+                    <a class="descripton_medium_medium gray_darken"
+                      >프로필 관리</a
+                    >
+                  </li>
+                  <li>
+                    <a class="descripton_medium_medium gray_darken"
+                      >보안 관리</a
+                    >
+                  </li>
+                  <li>
+                    <a class="descripton_medium_medium gray_darken"
+                      >이력 관리</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="" class="descripton_semibold_medium align"
+                  >계정 설정</a
+                >
+                <ul class="li_item">
+                  <li>
+                    <a class="descripton_medium_medium gray_darken"
+                      >비밀번호 설정</a
+                    >
+                  </li>
+                  <li>
+                    <a class="descripton_medium_medium gray_darken"
+                      >회원 탈퇴</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <!--footer-->
+          <div class="footer">
+            <ul>
+              <li>
+                <a href="" class="descripton_medium_medium gray">로그아웃</a>
+              </li>
+              <li>
+                <a href="" class="descripton_medium_medium gray">고객센터</a>
+              </li>
+              <li>
+                <a href="" class="descripton_medium_medium gray">한국어</a>
+              </li>
+            </ul>
+            <div class="company_logo">
+              <!-- <img src="" alt="company Logo" /> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right_wrap">
+        <div class="right_area">
+          <!--mobile에서만 노출-->
+
+          <div class="m_top_menu">
+            <div class="top_menu dis_flex_align">
+              <button>
+                <img
+                  src="/images/left_arrow.png"
+                  alt="뒤로가기"
+                  width="26"
+                  height="26"
+                />
+              </button>
+              <p class="descripton_semibold_medium">설정</p>
+            </div>
+          </div>
+          <!--//mobile에서만 노출-->
+          <div class="mypage_bar box_layout dis_flex_align_just_btw">
+            <div class="dis_flex_align_just_btw">
+              <div class="mini_img">
+                <img src="" alt="" />
+              </div>
+              <p class="descripton_medium_small">김혜성</p>
+              <button>
+                <img
+                  src="/images/drop_down_arrow.png"
+                  alt="펼치기"
+                  width="22"
+                  height="22"
+                />
+              </button>
+            </div>
+            <div>
+              <button>
+                <img
+                  src="/images/Notifications.png"
+                  alt="알림아이콘"
+                  width="22"
+                  height="22"
+                />
+              </button>
+              <button>
+                <img
+                  src="/images/Menu.png"
+                  alt="메뉴아이콘"
+                  width="22"
+                  height="22"
+                />
+              </button>
+            </div>
+          </div>
+
+          <!--mobile에서만 노출-->
+          <div class="menu_tab_m">
+            <div class="middle_tab_box">
+              <ul class="tab_list_box dis_flex">
+                <li class="tab_list_li active">
+                  <a class="tab_list_btn">
+                    마이페이지
+                    <span class="active_line"></span>
+                  </a>
+                </li>
+                <li class="tab_list_li">
+                  <a class="tab_list_btn">
+                    계정 설정
+                    <span class="active_line"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="menu_tab_m slide_tab">
+            <ul class="ck_tab_list_ul">
+              <li class="ck_tab_list_li active">
+                <a
+                  class="descripton_regular_xsmall ck_tab_list_color_tab ck_tab_list_color_tab_all"
+                >
+                  전체</a
+                >
+              </li>
+              <li class="ck_tab_list_li">
+                <a
+                  class="descripton_regular_xsmall ck_tab_list_color_tab ck_tab_list_color_tab_all"
+                  >내 근무 관리</a
+                >
+              </li>
+              <li class="ck_tab_list_li">
+                <a
+                  class="descripton_regular_xsmall ck_tab_list_color_tab ck_tab_list_color_tab_all"
+                  >프로필 관리</a
+                >
+              </li>
+              <li class="ck_tab_list_li">
+                <a
+                  class="descripton_regular_xsmall ck_tab_list_color_tab ck_tab_list_color_tab_all"
+                  >보안 관리</a
+                >
+              </li>
+              <li class="ck_tab_list_li">
+                <a
+                  class="descripton_regular_xsmall ck_tab_list_color_tab ck_tab_list_color_tab_all"
+                  >이력 관리</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!--//mobile에서만 노출-->
+
+          <div class="tab_cont">
+            <!--마이페이지: tab_content_01-->
+            <div class="mypage_tab">
+              <div class="count_area">
+                <div>
+                  <div class="box_layout">
+                    <p class="title descripton_bold_medium">신청</p>
+                    <p class="count descripton_semibold_large">10</p>
+                  </div>
+                  <div class="box_layout">
+                    <p class="title descripton_bold_medium">열람</p>
+                    <p class="count descripton_semibold_large">
+                      78<span class="descripton_medium_small gray">/100</span>
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <div class="box_layout">
+                    <p class="title descripton_bold_medium">결재 진행중</p>
+                    <p class="count descripton_semibold_large">
+                      81<span class="descripton_medium_small gray">/100</span>
+                    </p>
+                  </div>
+                  <div class="box_layout">
+                    <p class="title descripton_bold_medium">결재 완료</p>
+                    <p class="count descripton_semibold_large">17</p>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdown_box">
+                <div class="white_box">
+                  <div class="title">
+                    <p class="descripton_bold_medium">기본 정보</p>
+                    <button class="dropdown_btn" id="drop">
+                      <img
+                        src="/images/Keyboard_arrow_down.png"
+                        alt="펼치기버튼"
+                        width="26"
+                        height="26"
+                      />
+                    </button>
+                  </div>
+                  <div class="hide_area">
+                    <div class="progress_bar dis_flex_align_just_btw">
+                      <p class="descripton_semibold_regular gray_darken">
+                        프로필 완성도
+                      </p>
+                      <div class="dis_flex_align">
+                        <progress id="progress" value="80" max="100"></progress>
+                        <span class="descripton_bold_medium">80%</span>
+                      </div>
+                    </div>
+                    <div class="dis_flex_align_just_btw m_relative">
+                      <div class="profile_sub dis_flex_align">
+                        <div class="img_box">
+                          <!-- <img src="" alt="" /> -->
+                        </div>
+                        <div>
+                          <p class="descripton_semibold_large">김혜성</p>
+                          <span class="descripton_medium_medium gray"
+                            >comet33@performance.com</span
+                          >
+                        </div>
+                      </div>
+                      <div class="button_wrap_box m_align_change">
+                        <button disabled="">수정</button>
+                      </div>
+                    </div>
+                    <ul class="detail_ul">
+                      <li>
+                        <div>
+                          <div>
+                            <img
+                              src="/images/Phone.png"
+                              alt="휴대전화아이콘"
+                              width="25"
+                              height="25"
+                            />
+                          </div>
+                          <p class="descripton_semibold_regular">
+                            +82-10-1***-1***
+                          </p>
+                        </div>
+                        <div class="button_wrap_box">
+                          <button>수정</button>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <div>
+                            <img
+                              src="/images/Location.png"
+                              alt="위치아이콘"
+                              width="25"
+                              height="25"
+                            />
+                          </div>
+                          <p class="descripton_semibold_regular">
+                            서울시 서초구 사임당로 32 재우빌딩
+                          </p>
+                        </div>
+                        <div class="button_wrap_box">
+                          <button>수정</button>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <div>
+                            <img
+                              src="/images/Mail.png"
+                              alt="이메일아이콘"
+                              width="25"
+                              height="25"
+                            />
+                          </div>
+                          <p class="descripton_semibold_regular">-</p>
+                        </div>
+                        <div class="button_wrap_box">
+                          <button>추가</button>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div class="tooltip_box">
+                  <div>
+                    <div class="relative">
+                      <p class="descripton_bold_medium">
+                        알림 수신 동의
+                        <span class="tip_icon">
+                          <i
+                            class="fa-solid fa-circle-info"
+                            style="color: #bfbfbf"
+                            aria-hidden="true"
+                          ></i>
+                        </span>
+                      </p>
+                      <div class="tooltip">
+                        <button class="cancel" id="tooltipClose">
+                          <i
+                            class="fa-solid fa-xmark fa-fw fa-lg"
+                            style="color: #9b9b9b"
+                            aria-hidden="true"
+                          ></i>
+                        </button>
+                        <p class="descripton_semibold_small">알림 수신 동의</p>
+                        <span class="descripton_regular_xsmall"
+                          >알림 수신을 on/off 설정할 수 있습니다.<br />
+                          알림 수신 활성화시 활성화한 휴대전화 또는 이메일로
+                          알림을 받을수 있습니다.</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="box_layout_new">
+                  <ul class="detail_ul">
+                    <li>
+                      <div>
+                        <div>
+                          <img
+                            src="/images/Phone.png"
+                            alt="휴대전화아이콘"
+                            width="25"
+                            height="25"
+                          />
+                        </div>
+                        <p class="descripton_semibold_regular gray">휴대전화</p>
+                      </div>
+                      <div class="toggle_button_box">
+                        <div class="mr0">
+                          <div class="radio_togle">
+                            <input
+                              type="checkbox"
+                              class="tg nohidden"
+                              checked=""
+                              id="toggle1"
+                            />
+                            <label
+                              class="tg_btn tg_check"
+                              for="toggle1"
+                            ></label>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div>
+                          <img
+                            src="/images/Mail.png"
+                            alt="메일아이콘"
+                            width="25"
+                            height="25"
+                          />
+                        </div>
+                        <p class="descripton_semibold_regular gray">이메일</p>
+                      </div>
+                      <div class="toggle_button_box">
+                        <div class="mr0">
+                          <div class="radio_togle">
+                            <input
+                              type="checkbox"
+                              class="tg nohidden"
+                              id="toggle2"
+                            />
+                            <label
+                              class="tg_btn tg_check"
+                              for="toggle2"
+                            ></label>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <div class="tooltip_box">
+                  <div>
+                    <div class="relative">
+                      <p class="descripton_bold_medium">
+                        로그인 차단 설정
+                        <span class="tip_icon">
+                          <i
+                            class="fa-solid fa-circle-info"
+                            style="color: #bfbfbf"
+                            aria-hidden="true"
+                          ></i>
+                        </span>
+                      </p>
+                      <div class="tooltip">
+                        <button class="cancel" id="tooltipClose">
+                          <i
+                            class="fa-solid fa-xmark fa-fw fa-lg"
+                            style="color: #9b9b9b"
+                            aria-hidden="true"
+                          ></i>
+                        </button>
+                        <p class="descripton_semibold_small">
+                          로그인 차단 설정
+                        </p>
+                        <span class="descripton_regular_xsmall"
+                          >로그인 차단 설정 활성화시 해외접속이 불가하며 해외
+                          로그인을 차단합니다.</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="box_layout_new">
+                  <ul class="detail_ul">
+                    <li>
+                      <div>
+                        <div>
+                          <img
+                            src="/images/Language.png"
+                            alt="해외아이콘"
+                            width="25"
+                            height="25"
+                          />
+                        </div>
+                        <p class="descripton_semibold_regular gray">
+                          해외 로그인 차단
+                        </p>
+                      </div>
+                      <div class="toggle_button_box">
+                        <div class="mr0">
+                          <div class="radio_togle">
+                            <input
+                              type="checkbox"
+                              class="tg nohidden"
+                              checked
+                              id="toggle3"
+                            />
+                            <label
+                              class="tg_btn tg_check"
+                              for="toggle3"
+                            ></label>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div>
+                <div class="relative">
+                  <p class="descripton_bold_medium">학력</p>
+                </div>
+                <div class="box_layout_new">
+                  <ul class="detail_ul">
+                    <li>
+                      <div class="align_start">
+                        <div>
+                          <img
+                            src="/images/education.png"
+                            alt="학력아이콘"
+                            width="25"
+                            height="25"
+                          />
+                        </div>
+                        <div class="edu_detail">
+                          <p class="descripton_semibold_regular gray_darken">
+                            휴먼고등학교
+                          </p>
+                          <span class="descripton_regular_regular gray"
+                            >2012-2015</span
+                          >
+                        </div>
+                      </div>
+                      <div class="button_wrap_box dis_flex_align">
+                        <button class="mrr_8">수정</button>
+                        <button class="delete">삭제</button>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="align_start">
+                        <div>
+                          <img
+                            src="/images/education.png"
+                            alt="학력아이콘"
+                            width="25"
+                            height="25"
+                          />
+                        </div>
+                        <div class="edu_detail">
+                          <p class="descripton_semibold_regular gray_darken">
+                            휴먼대학교
+                          </p>
+                          <span class="descripton_regular_regular gray"
+                            >2016-2022</span
+                          >
+                        </div>
+                      </div>
+                      <div class="button_wrap_box dis_flex_align">
+                        <button class="mrr_8">수정</button>
+                        <button class="delete">삭제</button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--계정 설정: tab_content_02-->
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

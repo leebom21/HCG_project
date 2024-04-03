@@ -1,14 +1,43 @@
 $(function () {
   $("#drop").click(function () {
-    $(".hide_area").toggleClass("show");
+    $(".hide_area").toggleClass("hide");
     $(this).toggleClass("icon_rotate");
   });
 
-  $(".tip_icon").hover(function () {
-    $(".tooltip").toggle();
+  $(".tip_icon, .tooltip").hover(function () {
+    $(".tooltip").toggleClass("show");
   });
+  //   $("#tooltipClose").click(function () {
+  //     $(".tooltip").hide();
+  //   });
+
+  $(".menu_list ul > li").click(function () {
+    if ($(this).is(".active") == true) {
+      $(this).removeClass("active");
+    } else {
+      $(this).addClass("active");
+    }
+  });
+
+  $(".ck_tab_list_ul li").click(function () {
+    if ($(this).is(".active") == true) {
+      $(this).removeClass("active");
+    } else {
+      $(this).addClass("active");
+      $(this).siblings().removeClass("active");
+    }
+  });
+
+  //   $(".menu_list ul > li").click(function () {
+  //     if ($(this).is(".active") == true) {
+  //       $(this).removeClass("active");
+  //     } else {
+  //       $(this).addClass("active");
+  //       $(this).siblings().removeClass("active");
+  //     }
+  //   });
 });
-// $(".ck_tab_list_ul li").click(function () {
+// $(".tab_list_box > li").click(function () {
 //   if ($(this).is(".active") == true) {
 //     $(this).removeClass("active");
 //   } else {

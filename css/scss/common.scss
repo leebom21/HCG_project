@@ -1,6 +1,11 @@
 $color-main-blue: #0e8afe;
 $color-main-blue-darken: #4d73f2;
 $color-main-gray: #9b9b9b;
+
+$mobile: 767px;
+$tablet: 1023px;
+$desktop: 1024px;
+
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
 
 /*common.css*/
@@ -13,12 +18,18 @@ $color-main-gray: #9b9b9b;
 body {
   padding: 40px;
   height: 100vh;
-  background: #f0f2fe;
+  background: #f2f3f7;
 }
 ul,
 li,
 ol {
   list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: #000;
 }
 p {
   padding: 0;
@@ -29,8 +40,43 @@ button {
   background: transparent;
   cursor: pointer;
 }
+.mrt_10 {
+  margin-top: 10px;
+}
 .mrt_100 {
   margin-top: 100px;
+}
+.mrr_8 {
+  margin-right: 8px;
+}
+
+.dis_flex {
+  display: flex;
+}
+.dis_flex_align {
+  display: flex;
+  align-items: center;
+}
+.dis_flex_align_just_btw {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.align_start {
+  align-items: normal !important;
+}
+
+.mr0 {
+  margin: 0 !important;
+}
+
+.gray {
+  color: $color-main-gray !important;
+}
+
+.gray_darken {
+  color: #666 !important;
 }
 
 .align_wrap {
@@ -69,6 +115,7 @@ p.label {
     font-style: normal;
     font-weight: 600;
     cursor: pointer;
+    width: max-content;
 
     &.hover,
     &:hover {
@@ -164,60 +211,58 @@ p.label {
 /*tab status*/
 .tab_button_box {
   max-width: 200px;
+}
+.middle_tab_box {
+  width: fit-content;
+  transition: 0.3s;
 
-  .middle_tab_box {
-    width: fit-content;
-    transition: 0.3s;
-    max-width: 200px;
+  .tab_list_box {
+    padding: 0;
 
-    .tab_list_box {
-      padding: 0;
+    .tab_list_li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: 0.3s;
 
-      .tab_list_li {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+      & > p {
+        margin-right: 55px;
+      }
+      .active_line {
+        opacity: 0;
+      }
+      .tab_list_btn {
+        display: block;
+        padding: 8px 0;
+        box-sizing: border-box;
+        color: #666666;
+        position: relative;
         transition: 0.3s;
+        font-size: 16px;
+        font-weight: 400;
+        cursor: pointer;
 
-        & > p {
-          margin-right: 55px;
-        }
         .active_line {
-          opacity: 0;
-        }
-        .tab_list_btn {
-          display: block;
-          padding: 8px 0;
-          box-sizing: border-box;
-          color: #666666;
-          position: relative;
+          width: 100%;
+          height: 2px;
+          border-radius: 100px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
           transition: 0.3s;
-          font-size: 18px;
-          font-weight: 400;
-          cursor: pointer;
-
-          .active_line {
-            width: 100%;
-            height: 2px;
-            border-radius: 100px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            transition: 0.3s;
-          }
         }
       }
-      .tab_list_li.active .tab_list_btn,
-      .tab_list_li:hover .tab_list_btn {
-        color: #222;
-        font-weight: 600;
-      }
+    }
+    .tab_list_li.active .tab_list_btn,
+    .tab_list_li:hover .tab_list_btn {
+      color: #222;
+      font-weight: 600;
+    }
 
-      .tab_list_li.active .active_line,
-      .tab_list_li:hover .active_line {
-        opacity: 1;
-        background-color: #000;
-      }
+    .tab_list_li.active .active_line,
+    .tab_list_li:hover .active_line {
+      opacity: 1;
+      background-color: #000;
     }
   }
 }
@@ -283,7 +328,7 @@ p.label {
 .white_box {
   border-radius: 10px;
   background: #fff;
-  padding: 20px 15px 20px 25px;
+  padding: 20px 15px 20px 20px;
   box-shadow: 2px 6px 10px #dddddd29;
   min-width: 300px;
 }
@@ -301,34 +346,26 @@ p.label {
   cursor: pointer;
 }
 .dropdown_btn > img {
-  transition: transform 0.3s;
+  transition: transform 0.2s;
+  transform: rotate(180deg);
 }
 .dropdown_btn.icon_rotate > img {
-  transform: rotate(180deg);
+  transform: rotate(360deg);
 }
 
 .hide_area {
-  margin-top: 15px;
-  min-height: 100px;
-  border: 1px solid #eee;
-  margin-right: 10px;
-  background: #f6f6f6ee;
-  border-radius: 10px;
-  display: none;
-}
-
-.hide_area.show {
   display: block;
 }
 
-.tooltip_box {
-  .relative {
-    position: relative;
+.hide_area.hide {
+  display: none;
+}
 
-    & > p {
-      margin-left: 30px;
-    }
-  }
+.relative {
+  position: relative;
+  padding: 14px 0;
+}
+.tooltip_box {
   .tip_icon {
     cursor: pointer;
   }
@@ -343,7 +380,10 @@ p.label {
     position: relative;
     min-width: 220px;
     position: absolute;
-    top: 35px;
+    top: 38px;
+    z-index: 9999;
+    left: -32px;
+    width: min-content;
 
     &::after {
       content: "";
@@ -386,6 +426,10 @@ p.label {
       color: $color-main-gray;
     }
   }
+
+  .tooltip.show {
+    display: block;
+  }
 }
 
 .alert_box {
@@ -411,4 +455,73 @@ p.label {
       margin-right: 5px;
     }
   }
+}
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+@mixin tablet {
+  @media (min-width: $mobile+1) and (max-width: $tablet) {
+    @content;
+  }
+}
+
+/*반응형, 브라우저 크기가 1024px 이상일때*/
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+/**/
+
+.ck_tab_list_ul {
+  display: flex;
+  width: max-content;
+  overflow-y: scroll;
+}
+.ck_tab_list_li {
+  float: left;
+  margin-right: 8px;
+}
+.ck_tab_list_li:last-child {
+  margin-right: 0px;
+}
+.ck_tab_list_tab {
+  display: inline-block;
+  padding: 3px 18px;
+  border-radius: 100px;
+  transition: 0.3s;
+  border: 1px solid #263439;
+  background-color: #fff;
+}
+
+.ck_tab_list_color_tab {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 100px;
+  transition: 0.3s;
+}
+.ck_tab_list_color_tab {
+  background: #ffffff;
+  color: #636363;
+  border: 1px solid #ddd;
+}
+
+.ck_tab_list_li:hover .ck_tab_list_color_tab_all {
+  background-color: #cfd5d9;
+  color: #616f7d;
+}
+.ck_tab_list_li:active .ck_tab_list_color_tab_all {
+  background-color: #bec8cd;
+  color: #616f7d;
+}
+.ck_tab_list_li.active .ck_tab_list_color_tab_all {
+  background-color: #263439;
+  color: #fff;
+  width: max-content;
 }
