@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,8 +11,14 @@
       src="https://kit.fontawesome.com/682f317513.js"
       crossorigin="anonymous"
     ></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="/js/common.js"></script>
+    <script type="text/javascript" src="/js/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+
+      <!--툴팁 아이콘은 첨부파일에 없어서 어썸폰트로 대체해서 작업처리-->
+      <!--부트스트랩 5.0 사용-->
+
   </head>
   <body>
     <div class="container">
@@ -40,9 +46,9 @@
             >
           </div>
           <div class="menu_list">
-            <ul>
+            <ul class="tab_list_box">
               <li class="active">
-                <a href="" class="descripton_semibold_medium align"
+                <a  class="descripton_semibold_medium align"
                   >마이페이지</a
                 >
                 <ul class="li_item">
@@ -69,7 +75,7 @@
                 </ul>
               </li>
               <li>
-                <a href="" class="descripton_semibold_medium align"
+                <a class="descripton_semibold_medium align"
                   >계정 설정</a
                 >
                 <ul class="li_item">
@@ -110,8 +116,7 @@
       <div class="right_wrap">
         <div class="right_area">
           <!--mobile에서만 노출-->
-
-          <div class="m_top_menu">
+          <div class="m_top_menu ">
             <div class="top_menu dis_flex_align">
               <button>
                 <img
@@ -124,8 +129,7 @@
               <p class="descripton_semibold_medium">설정</p>
             </div>
           </div>
-          <!--//mobile에서만 노출-->
-          <div class="mypage_bar box_layout dis_flex_align_just_btw">
+          <div class="mypage_bar m_top_menu box_layout dis_flex_align_just_btw">
             <div class="dis_flex_align_just_btw">
               <div class="mini_img">
                 <img src="" alt="" />
@@ -159,8 +163,6 @@
               </button>
             </div>
           </div>
-
-          <!--mobile에서만 노출-->
           <div class="menu_tab_m">
             <div class="middle_tab_box">
               <ul class="tab_list_box dis_flex">
@@ -179,46 +181,45 @@
               </ul>
             </div>
           </div>
-          <div class="menu_tab_m slide_tab">
-            <ul class="ck_tab_list_ul">
-              <li class="ck_tab_list_li active">
-                <a
-                  class="descripton_regular_xsmall ck_tab_list_color_tab ck_tab_list_color_tab_all"
-                >
-                  전체</a
-                >
-              </li>
-              <li class="ck_tab_list_li">
-                <a
-                  class="descripton_regular_xsmall ck_tab_list_color_tab ck_tab_list_color_tab_all"
-                  >내 근무 관리</a
-                >
-              </li>
-              <li class="ck_tab_list_li">
-                <a
-                  class="descripton_regular_xsmall ck_tab_list_color_tab ck_tab_list_color_tab_all"
-                  >프로필 관리</a
-                >
-              </li>
-              <li class="ck_tab_list_li">
-                <a
-                  class="descripton_regular_xsmall ck_tab_list_color_tab ck_tab_list_color_tab_all"
-                  >보안 관리</a
-                >
-              </li>
-              <li class="ck_tab_list_li">
-                <a
-                  class="descripton_regular_xsmall ck_tab_list_color_tab ck_tab_list_color_tab_all"
-                  >이력 관리</a
-                >
-              </li>
-            </ul>
-          </div>
           <!--//mobile에서만 노출-->
-
           <div class="tab_cont">
             <!--마이페이지: tab_content_01-->
-            <div class="mypage_tab">
+            <div class="mypage_tab" >
+              <div class="menu_tab_m slide_tab">
+                <ul class="ck_tab_list_ul">
+                  <li class="ck_tab_list_li active">
+                    <a
+                      class="descripton_regular_xsmall ck_tab_list_color_tab ck_tab_list_color_tab_all"
+                    >
+                      전체</a
+                    >
+                  </li>
+                  <li class="ck_tab_list_li">
+                    <a
+                      class="descripton_regular_xsmall ck_tab_list_color_tab ck_tab_list_color_tab_all"
+                      >내 근무 관리</a
+                    >
+                  </li>
+                  <li class="ck_tab_list_li">
+                    <a
+                      class="descripton_regular_xsmall ck_tab_list_color_tab ck_tab_list_color_tab_all"
+                      >프로필 관리</a
+                    >
+                  </li>
+                  <li class="ck_tab_list_li">
+                    <a
+                      class="descripton_regular_xsmall ck_tab_list_color_tab ck_tab_list_color_tab_all"
+                      >보안 관리</a
+                    >
+                  </li>
+                  <li class="ck_tab_list_li">
+                    <a
+                      class="descripton_regular_xsmall ck_tab_list_color_tab ck_tab_list_color_tab_all"
+                      >이력 관리</a
+                    >
+                  </li>
+                </ul>
+              </div>
               <div class="count_area">
                 <div>
                   <div class="box_layout">
@@ -345,38 +346,39 @@
               <div>
                 <div class="tooltip_box">
                   <div>
-                    <div class="relative">
+                    <div class="dis_flex_align pd_14">
                       <p class="descripton_bold_medium">
                         알림 수신 동의
-                        <span class="tip_icon">
+                        <div class="tip_icon relative">
                           <i
                             class="fa-solid fa-circle-info"
                             style="color: #bfbfbf"
                             aria-hidden="true"
                           ></i>
-                        </span>
+                          <div class="tooltip">
+                            <button class="tooltip_close">
+                              <i
+                                class="fa-solid fa-xmark fa-fw fa-lg"
+                                style="color: #9b9b9b"
+                                aria-hidden="true"
+                              ></i>
+                            </button>
+                            <p class="descripton_semibold_small">알림 수신 동의</p>
+                            <span class="descripton_regular_xsmall"
+                              >알림 수신을 on/off 설정할 수 있습니다.<br />
+                              알림 수신 활성화시 활성화한 휴대전화 또는 이메일로
+                              알림을 받을수 있습니다.</span
+                            >
+                          </div>
+                        </div>
                       </p>
-                      <div class="tooltip">
-                        <button class="cancel" id="tooltipClose">
-                          <i
-                            class="fa-solid fa-xmark fa-fw fa-lg"
-                            style="color: #9b9b9b"
-                            aria-hidden="true"
-                          ></i>
-                        </button>
-                        <p class="descripton_semibold_small">알림 수신 동의</p>
-                        <span class="descripton_regular_xsmall"
-                          >알림 수신을 on/off 설정할 수 있습니다.<br />
-                          알림 수신 활성화시 활성화한 휴대전화 또는 이메일로
-                          알림을 받을수 있습니다.</span
-                        >
-                      </div>
+  
                     </div>
                   </div>
                 </div>
                 <div class="box_layout_new">
                   <ul class="detail_ul">
-                    <li>
+                    <li >
                       <div>
                         <div>
                           <img
@@ -396,6 +398,7 @@
                               class="tg nohidden"
                               checked=""
                               id="toggle1"
+                              name="phone"
                             />
                             <label
                               class="tg_btn tg_check"
@@ -405,7 +408,7 @@
                         </div>
                       </div>
                     </li>
-                    <li>
+                    <li class="relative">
                       <div>
                         <div>
                           <img
@@ -432,6 +435,27 @@
                           </div>
                         </div>
                       </div>
+
+                      <!--modal(부트스트랩 5.0 사용)-->
+                    <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog  alert_box" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title descripton_semibold_small" id="exampleModalLabel">
+                              휴대전화 알림 수신에 동의합니다.
+                            </h5>
+                          </div>
+                          <div class="modal-body descripton_regular_xsmall">
+                              휴대전화 알림 수신에 동의할 시 정보성 알림 메시지와 광고성 알림 메시지를 수신할 수 있습니다.
+                           </div>
+                          <div class="modal-footer button_wrap_box">
+                            <button class="btn" id="modalN" type="button" data-dismiss="modal">나중에</button>
+                            <button class="btn confirm" id="modalY" href="#">확인</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                      <!--modal-->
                     </li>
                   </ul>
                 </div>
@@ -440,33 +464,34 @@
               <div>
                 <div class="tooltip_box">
                   <div>
-                    <div class="relative">
+                    <div class="dis_flex_align pd_14">
                       <p class="descripton_bold_medium">
                         로그인 차단 설정
-                        <span class="tip_icon">
+                        <div class="tip_icon relative">
                           <i
                             class="fa-solid fa-circle-info"
                             style="color: #bfbfbf"
                             aria-hidden="true"
                           ></i>
-                        </span>
+                          <div class="tooltip">
+                            <button class="tooltip_close">
+                              <i
+                                class="fa-solid fa-xmark fa-fw fa-lg"
+                                style="color: #9b9b9b"
+                                aria-hidden="true"
+                              ></i>
+                            </button>
+                            <p class="descripton_semibold_small">
+                              로그인 차단 설정
+                            </p>
+                            <span class="descripton_regular_xsmall"
+                              >로그인 차단 설정 활성화시 해외접속이 불가하며 해외
+                              로그인을 차단합니다.</span
+                            >
+                          </div>
+                        </div>
                       </p>
-                      <div class="tooltip">
-                        <button class="cancel" id="tooltipClose">
-                          <i
-                            class="fa-solid fa-xmark fa-fw fa-lg"
-                            style="color: #9b9b9b"
-                            aria-hidden="true"
-                          ></i>
-                        </button>
-                        <p class="descripton_semibold_small">
-                          로그인 차단 설정
-                        </p>
-                        <span class="descripton_regular_xsmall"
-                          >로그인 차단 설정 활성화시 해외접속이 불가하며 해외
-                          로그인을 차단합니다.</span
-                        >
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -492,7 +517,6 @@
                             <input
                               type="checkbox"
                               class="tg nohidden"
-                              checked
                               id="toggle3"
                             />
                             <label
@@ -507,7 +531,7 @@
                 </div>
               </div>
               <div>
-                <div class="relative">
+                <div class="pd_14">
                   <p class="descripton_bold_medium">학력</p>
                 </div>
                 <div class="box_layout_new">
@@ -565,7 +589,9 @@
               </div>
             </div>
             <!--계정 설정: tab_content_02-->
-            <div></div>
+            <div class="setting_tab">
+              empty 
+            </div>
           </div>
         </div>
       </div>

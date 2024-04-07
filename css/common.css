@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
 /*common.css*/
 * {
@@ -24,7 +23,12 @@ a {
   color: #000;
 }
 
-p {
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
   padding: 0;
   margin: 0;
 }
@@ -33,6 +37,14 @@ button {
   border: none;
   background: transparent;
   cursor: pointer;
+}
+
+.relative {
+  position: relative;
+}
+
+.mr0 {
+  margin: 0 !important;
 }
 
 .mrt_10 {
@@ -45,6 +57,10 @@ button {
 
 .mrr_8 {
   margin-right: 8px;
+}
+
+.pd_14 {
+  padding: 14px 0;
 }
 
 .dis_flex {
@@ -66,10 +82,6 @@ button {
   align-items: normal !important;
 }
 
-.mr0 {
-  margin: 0 !important;
-}
-
 .gray {
   color: #9b9b9b !important;
 }
@@ -81,13 +93,15 @@ button {
 .align_wrap {
   display: flex;
   align-items: start;
-  justify-content: space-evenly;
+  justify-content: left;
+  gap: 80px;
 }
 
 .kit_tit {
   font-size: 18px;
   color: #000;
   text-decoration: underline;
+  margin-bottom: 10px;
 }
 
 p.label {
@@ -330,18 +344,17 @@ p.label {
   justify-content: space-between;
 }
 
+/*dropdown status*/
 .dropdown_btn {
   border: none;
   box-sizing: border-box;
   background: transparent;
   cursor: pointer;
 }
-
 .dropdown_btn > img {
   transition: transform 0.2s;
   transform: rotate(180deg);
 }
-
 .dropdown_btn.icon_rotate > img {
   transform: rotate(360deg);
 }
@@ -354,13 +367,14 @@ p.label {
   display: none;
 }
 
-.relative {
-  position: relative;
-  padding: 14px 0;
-}
-
+/* tooltip status */
 .tooltip_box .tip_icon {
   cursor: pointer;
+  margin-left: 4px;
+}
+.tooltip_box .tip_icon .tooltip.show {
+  display: block !important;
+  pointer-events: auto;
 }
 .tooltip_box .tooltip {
   display: none;
@@ -372,9 +386,10 @@ p.label {
   position: relative;
   min-width: 220px;
   position: absolute;
-  top: 38px;
+  top: 27px;
   z-index: 9999;
-  left: -32px;
+  left: 50%;
+  margin-left: -146px;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -383,47 +398,46 @@ p.label {
   content: "";
   position: absolute;
   border-style: solid;
-  border-width: 0 8px 10px 8px;
+  border-width: 0 6px 8px 6px;
   border-color: #ffffff transparent;
   display: block;
   width: 0;
   z-index: 1;
-  top: -10px;
+  top: -8px;
   left: 50%;
-  margin-left: 7px;
+  margin-left: 9px;
 }
 .tooltip_box .tooltip::before {
   content: "";
   position: absolute;
   border-style: solid;
-  border-width: 0 8px 10px 8px;
+  border-width: 0 6px 8px 6px;
   border-color: #c7c7c7 transparent;
   display: block;
   width: 0;
   z-index: 0;
-  top: -11px;
+  top: -9px;
   left: 50%;
-  margin-left: 7px;
+  margin-left: 9px;
 }
-.tooltip_box .tooltip button.cancel {
+.tooltip_box .tooltip button.tooltip_close {
   position: absolute;
   top: 9px;
   right: 6px;
   padding: 0;
+  z-index: 9999;
 }
 .tooltip_box .tooltip > span {
   margin-top: 5px;
   display: block;
   color: #9b9b9b;
 }
-.tooltip_box .tooltip.show {
-  display: block;
-}
 
+/* alert status*/
 .alert_box > div {
   background: #fff;
   border: 1px solid #ddd;
-  padding: 18px 20px;
+  padding: 18px 18px 18px 20px;
   border-radius: 5px;
   position: relative;
   min-width: 220px;
@@ -440,27 +454,86 @@ p.label {
   margin-right: 5px;
 }
 
-/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
-/*반응형, 브라우저 크기가 1024px 이상일때*/
-/**/
-.ck_tab_list_ul {
-  display: flex;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  overflow-y: scroll;
+.modal {
+  background-color: rgba(70, 70, 70, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
 }
 
-.ck_tab_list_li {
+.modal.fade .modal-dialog {
+  transition: transform 0.3s ease-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal:before {
+  display: inline-block;
+  vertical-align: middle;
+  content: " ";
+  height: 100%;
+}
+
+.modal-dialog {
+  width: -webkit-min-content !important;
+  width: -moz-min-content !important;
+  width: min-content !important;
+  height: auto !important;
+  margin: 0 !important;
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+.modal-dialog .modal-content .modal-header {
+  margin-bottom: 5px;
+}
+.modal-dialog .modal-content .modal-body {
+  color: #9b9b9b;
+  margin-bottom: 12px;
+}
+.modal-dialog .modal-content .modal-footer {
+  display: flex;
+  gap: 10px;
+  justify-content: end;
+  max-width: inherit;
+}
+
+.alert_box > div {
+  height: auto !important;
+}
+
+/* mobile tab slide menu status*/
+.ck_tab_list_ul::-webkit-scrollbar {
+  display: none;
+}
+
+.ck_tab_list_ul {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.ck_tab_list_ul {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.ck_tab_list_ul .ck_tab_list_li {
   float: left;
   margin-right: 8px;
 }
-
-.ck_tab_list_li:last-child {
+.ck_tab_list_ul .ck_tab_list_li:last-child {
   margin-right: 0px;
 }
-
-.ck_tab_list_tab {
+.ck_tab_list_ul .ck_tab_list_li .ck_tab_list_tab {
   display: inline-block;
   padding: 3px 18px;
   border-radius: 100px;
@@ -468,31 +541,23 @@ p.label {
   border: 1px solid #263439;
   background-color: #fff;
 }
-
-.ck_tab_list_color_tab {
+.ck_tab_list_ul .ck_tab_list_li .ck_tab_list_color_tab {
   display: inline-block;
   padding: 7px 12px;
   border-radius: 100px;
   transition: 0.3s;
+  cursor: pointer;
 }
-
-.ck_tab_list_color_tab {
+.ck_tab_list_ul .ck_tab_list_li .ck_tab_list_color_tab {
   background: #ffffff;
   color: #636363;
   border: 1px solid #ddd;
 }
-
-.ck_tab_list_li:hover .ck_tab_list_color_tab_all {
+.ck_tab_list_ul .ck_tab_list_li:hover .ck_tab_list_color_tab_all, .ck_tab_list_ul .ck_tab_list_li:active .ck_tab_list_color_tab_all {
   background-color: #cfd5d9;
   color: #616f7d;
 }
-
-.ck_tab_list_li:active .ck_tab_list_color_tab_all {
-  background-color: #bec8cd;
-  color: #616f7d;
-}
-
-.ck_tab_list_li.active .ck_tab_list_color_tab_all {
+.ck_tab_list_ul .ck_tab_list_li.active .ck_tab_list_color_tab_all {
   background-color: #263439;
   color: #fff;
   width: -webkit-max-content;
